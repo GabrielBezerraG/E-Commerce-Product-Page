@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledImages = styled.section`
 
      .main-image {
-      transition: 200ms;     
+      transition: all 200ms;     
       background: center / cover no-repeat;
       background-image: ${(props) => props.mainImage};
       max-width: 100%;
@@ -35,7 +35,7 @@ export const StyledImages = styled.section`
       i {
          display: inline-block;
          background: center / contain no-repeat;
-         transition: 200ms;
+         transition: all 200ms;
       }
    }
 
@@ -120,7 +120,7 @@ export const StyledImages = styled.section`
          background: center / cover no-repeat;
          width: 100%;
          height: 100%;
-         transition: 200ms;
+         transition: all 200ms;
       }
 
       .thumbnail__image:hover {

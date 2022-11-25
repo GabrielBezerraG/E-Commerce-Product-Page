@@ -36,7 +36,7 @@ export const StyledLightbox = styled.div`
          height: 22px;
          background: url(/images/icon-close.svg) center / contain no-repeat;
          filter: brightness(2.5);
-         transition: 150ms;
+         transition: all 150ms;
       }
 
       .lightbox__close button:hover {
@@ -45,7 +45,7 @@ export const StyledLightbox = styled.div`
       }
 
       .lightbox__image {
-         transition: 200ms background-image;
+         transition: all 200ms background-image;
          background: center / cover no-repeat;
          background-image: ${(props) => props.mainImage};
          width: 550px;
@@ -69,7 +69,7 @@ export const StyledLightbox = styled.div`
          i {
             display: inline-block;
             background: center / contain no-repeat;
-            transition: 200ms;
+            transition: all 200ms;
          }
       }
 
@@ -126,7 +126,7 @@ export const StyledLightbox = styled.div`
                background: center / cover no-repeat;
                width: 100%;
                height: 100%;
-               transition: 200ms;
+               transition: all 200ms;
             }
             
             span:hover {
