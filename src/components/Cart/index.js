@@ -1,18 +1,17 @@
 import CartProduct from "../Cart-Product";
 import { StyledCart } from "./styles";
 
-export default function Cart(props) {
+export default function Cart({store}) {
    return (
       <StyledCart>
          <h3>Cart</h3>
          <hr />
          <div className="cart__content">
-            {props.cartItems === 0
+            {store.cartItems === 0
                ? <span className="cart__empty">Your cart is empty.</span>
-               : <CartProduct cartItems={props.cartItems} setCartItems={props.setCartItems} 
-               />
+               : <CartProduct store={store}/>
             }
-            {props.cartItems > 0 && <button className="cart__checkout button">Checkout</button> }
+            {store.cartItems > 0 && <button className="cart__checkout button">Checkout</button> }
          </div>
       </StyledCart>
    )

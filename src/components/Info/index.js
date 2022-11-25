@@ -1,6 +1,6 @@
 import { StyledInfo } from "./styles";
 
-export default function Info(props) {
+export default function Info({store}) {
    return (
       <StyledInfo>
          <h3>Sneaker Company</h3>
@@ -15,15 +15,15 @@ export default function Info(props) {
          </div>
          <div className="buttons">
             <div className="quantity">
-               <button onClick={props.decreaseItemAmount} className="button__minus">
+               <button onClick={store.decreaseItemAmount} className="button__minus">
                   <i className="minus-icon" />
                </button>
-               <span>{props.itemAmount}</span>
-               <button onClick={props.increaseItemAmount} className="button__plus">
+               <span>{store.itemAmount}</span>
+               <button onClick={store.increaseItemAmount} className="button__plus">
                   <i className="plus-icon" />
                </button>
             </div>
-            <button onClick={props.addItemsToCart} className="cart__button button">
+            <button onClick={store.addItemsToCart} className="cart__button button">
                <i className="cart__icon" />
                <span>Add to cart</span>
             </button>

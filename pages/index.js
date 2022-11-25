@@ -47,34 +47,33 @@ export default function Home() {
     if (itemAmount > 0) setItemAmount(itemAmount - 1);
   }
 
+  const store = {
+    menuVisibility: menuVisibility, 
+    setMenuVisibility: setMenuVisibility, 
+    cartVisibility: cartVisibility,
+    setCartVisibility: setCartVisibility,
+    lightboxVisibility: lightboxVisibility,
+    setLightboxVisibility: setLightboxVisibility,
+    currentImage: currentImage,
+    setCurrentImage: setCurrentImage,
+    itemAmount: itemAmount,
+    setItemAmount: setItemAmount,
+    cartItems: cartItems,
+    setCartItems: setCartItems,
+    mainImagePath: mainImagePath,
+    addItemsToCart: addItemsToCart,
+    nextImage: nextImage,
+    previousImage: previousImage,
+    increaseItemAmount: increaseItemAmount,
+    decreaseItemAmount: decreaseItemAmount,
+    thumbnails: data.thumbnails
+  }
+
 
   return (
     <div className="main-container">
-      <Header 
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-        menuVisibility={menuVisibility} 
-        setMenuVisibility={setMenuVisibility} 
-        cartVisibility={cartVisibility}
-        setCartVisibility={setCartVisibility}
-      />
-      <Main menuVisibility={menuVisibility}
-        lightboxVisibility={lightboxVisibility}
-        setLightboxVisibility={setLightboxVisibility}
-        currentImage={currentImage}
-        setCurrentImage={setCurrentImage}
-        nextImage={nextImage}
-        previousImage={previousImage}
-        mainImagePath={mainImagePath}
-        thumbnails={data.thumbnails}
-        itemAmount={itemAmount}
-        increaseItemAmount={increaseItemAmount}
-        decreaseItemAmount={decreaseItemAmount}
-        setCartItems={setCartItems}
-        cartItems={cartItems}
-        addItemsToCart={addItemsToCart}
-        setCartVisibility={setCartVisibility}
-      />
+      <Header store={store}/>
+      <Main store={store} />
     </div>
   )
 }
