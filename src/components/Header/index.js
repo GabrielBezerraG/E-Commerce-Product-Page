@@ -20,7 +20,7 @@ export default function Header({store}) {
                   store.setMenuVisibility(false)
                   store.setLightboxVisibility(false)
                }}>
-                  <i className="header__product-count">{store.cartItems}</i>
+                  {store.cartItems > 0 && <i className="header__product-count">{store.cartItems}</i>}
                </button>
                {store.cartVisibility && <Cart store={store}/>}
             </div>

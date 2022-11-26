@@ -1,10 +1,10 @@
 import { StyledLightbox } from "./styles";
 
-export default function Lightbox({store}) {
+export default function Lightbox({ store }) {
    return (
       <StyledLightbox mainImage={store.mainImagePath}>
          <div className="lightbox__content">
-            <div className="lightbox__close"> 
+            <div className="lightbox__close">
                <button onClick={() => store.setLightboxVisibility(false)} />
             </div>
             <div className="lightbox__image">
@@ -18,13 +18,13 @@ export default function Lightbox({store}) {
             <div className="lightbox__thumbnails">
                {store.thumbnails.map((thumbnail, index) => {
                   return (
-                     <i 
-                        key={thumbnail} 
-                        onClick={() => store.setCurrentImage(index + 1)} 
+                     <i
+                        key={thumbnail}
+                        onClick={() => store.setCurrentImage(index + 1)}
                         className={index + 1 === store.currentImage
-                        ? 'thumbnail--active'
-                        : undefined
-                     }
+                           ? 'thumbnail--active'
+                           : undefined
+                        }
                      >
                         <span className={index + 1 === store.currentImage
                            ? `image--active image-${index + 1}`
